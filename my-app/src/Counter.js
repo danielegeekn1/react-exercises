@@ -4,9 +4,9 @@ export class Counter extends React.Component {
   state = {
     count: this.props.initialValue,
   };
-  constructor(props) {
-    super(props);
-    setInterval(() => {
+
+  componentDidMount() {
+    this.CounterCount = setInterval(() => {
       this.setState((state) => {
         return {
           count: state.count + this.props.incrementor,
@@ -14,6 +14,7 @@ export class Counter extends React.Component {
       });
     }, this.props.timeout);
   }
+
   render() {
     return (
       <div>
@@ -33,3 +34,8 @@ export class Counter extends React.Component {
 //State 04
 
 //Extract the `h1` tag showing the `count` state variable into a new component called `CounterDisplay` and render it within the `Counter` component, passing it the `count` state variable as a prop.
+
+//Component Lifecycle 01
+
+//Modify the `Counter` component so that the interval is initialized within the `componentDidMount` life cycle method instead of the constructor. Is the constructor still required?
+//answer- the constructor is not mandatory but recommended whenever the components are needed to be already rendered in the DOM
