@@ -7,9 +7,12 @@ export class Welcome extends React.Component {
       <div>
         <p>Welcome {this.props.name}</p>
         <p>Your age is {this.props.age}</p>
-        <Age name={33} />
+        {Age.props.age > 18 && <Age age={33} />}
       </div>
     );
   }
 }
 //Modify the `Welcome` component so that it receives a second prop called `age` and renders it below the 'welcome' message, within a `p` tag after the message `"Your age is "`.
+//Conditional Rendering 01
+
+//Modify the `Welcome` component so that the `Age` component is rendered only if the `age` prop is greater than `18`.
