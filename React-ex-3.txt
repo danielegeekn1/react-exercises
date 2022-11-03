@@ -1,0 +1,4 @@
+What happens if the `name` variable is not passed to the function?
+
+
+It'll not be passed, every JS code need to be passed within curley brackets in order to be converted in JSX code
