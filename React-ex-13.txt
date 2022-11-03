@@ -1,0 +1,13 @@
+Can you use the `Hello` component more than once in the `App` component? What happens if you do?
+
+Yes, components are meant to be reusable, so by following this logic it's allowed to re-use 'em more than once, as many times as we desire, if we do it it'll be rendered in or App when we declare it and where we declare it, accordingly to the props values we passed within 'em
+Example we could have a class Welcome as in the example of the course
+export class Welcome extends React.Component {
+  render() {
+    return <h2>Hello, {this.props.name}</h2>;
+  }
+}
+And add this component more than once in our App files, but for each components, we're passing to 'em different props values, like this
+ <Welcome name="Sara" />
+ <Welcome name="Cahal" />
+ <Welcome name="Edite" />
