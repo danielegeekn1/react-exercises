@@ -9,8 +9,10 @@ export class Welcome extends React.Component {
         <p>Your age is {this.props.age}</p>
         {Age.props.age > 18 && <Age age={33} />}
         {Age.props.age && <Age />}
-        {Age.props.age > 18 && Age.props.age < 65 && <Age />}
-        {Age.props.age > 18 && Age.props.age < 65 && Age.props.name && <Age />}
+        {Age.props.age > 18 && Age.props.age < 65 && <Age age={33} />}
+        {Age.props.age > 18 &&
+          Age.props.age < 65 &&
+          Age.props.name === "john" && <Age age={33} name="john" />}
       </div>
     );
   }
