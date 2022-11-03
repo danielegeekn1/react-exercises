@@ -6,7 +6,11 @@ export class Welcome extends React.Component {
     return (
       <div>
         <p>Welcome {this.props.name}</p>
-        <p>Your age is {this.props.age}</p>
+        {Age.props.age > 18 ? (
+          <p>Your age is {this.props.age}</p>
+        ) : (
+          <p>You are very strong</p>
+        )}
         {Age.props.age > 18 && <Age age={33} />}
         {Age.props.age && <Age />}
         {Age.props.age > 18 && Age.props.age < 65 && <Age age={33} />}
@@ -17,7 +21,8 @@ export class Welcome extends React.Component {
     );
   }
 }
-//Modify the `Welcome` component so that it receives a second prop called `age` and renders it below the 'welcome' message, within a `p` tag after the message `"Your age is "`.
+
+//Modif the `Welcome` component so that it receives a second prop called `age` and renders it below the 'welcome' message, within a `p` tag after the message `"Your age is "`.
 //Conditional Rendering 01
 
 //Modify the `Welcome` component so that the `Age` component is rendered only if the `age` prop is greater than `18`.
@@ -33,3 +38,7 @@ export class Welcome extends React.Component {
 //Conditional Rendering 04
 
 //Modify the `Welcome` component so that the `Age` component is rendered only if the `age` prop is greater than `18` and less than `65` and the `name` prop is equal to "John".
+
+//Conditional Rendering 05
+
+//Modify the `Age` component so that the `"Your age is "` message is rendered only if the `age` prop is greater than `18`. Otherwise render the `"You are very young!"` message.
