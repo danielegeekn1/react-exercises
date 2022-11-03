@@ -8,6 +8,7 @@ export class Welcome extends React.Component {
         <p>Welcome {this.props.name}</p>
         <p>Your age is {this.props.age}</p>
         {Age.props.age > 18 && <Age age={33} />}
+        {Age.props.age && <Age />}
       </div>
     );
   }
@@ -16,3 +17,7 @@ export class Welcome extends React.Component {
 //Conditional Rendering 01
 
 //Modify the `Welcome` component so that the `Age` component is rendered only if the `age` prop is greater than `18`.
+
+//Conditional Rendering 02
+
+//Modify the `Welcome` component so that the `Age` component is rendered only if the `age` prop is present.
