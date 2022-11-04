@@ -3,7 +3,6 @@ import { Welcome } from "./Props-01";
 export class InteractiveWelcome extends React.Component {
   state = {
     username: "",
-    value: "",
   };
   handleInput = (e) => {
     const newvalues = e.target.value;

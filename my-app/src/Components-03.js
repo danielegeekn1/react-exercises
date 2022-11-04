@@ -4,6 +4,7 @@ import { ClickTracker } from "./ClickTracker";
 import { Color } from "./Color";
 import { Hello } from "./Component-02";
 import { Welcome } from "./Props-01";
+import { TodoList } from "./TodoList";
 const items = [
   { id: 1, name: "green" },
   {
@@ -20,6 +21,7 @@ const items = [
   },
 ];
 
+const ItemsF = ["billy", "kate", "jane"];
 export class App extends React.Component {
   render() {
     return (
@@ -28,6 +30,7 @@ export class App extends React.Component {
         <Welcome name="Daniele" age={33} />
         <Color items={items} />
         <ClickTracker />
+        <TodoList items={ItemsF} />
       </div>
     );
   }
