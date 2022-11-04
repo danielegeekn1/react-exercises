@@ -1,5 +1,6 @@
 //Write a class component called `App` that renders the `Hello` component within a `div` tag.
 import React from "react";
+import { ClickTracker } from "./ClickTracker";
 import { Color } from "./Color";
 import { Hello } from "./Component-02";
 import { Welcome } from "./Props-01";
@@ -26,6 +27,7 @@ export class App extends React.Component {
         <Hello />
         <Welcome name="Daniele" age={33} />
         <Color items={items} />
+        <ClickTracker />
       </div>
     );
   }
