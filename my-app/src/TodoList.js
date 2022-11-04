@@ -1,5 +1,5 @@
 import React from "react";
-
+import ItemsF from "./Components-03";
 export class TodoList extends React.Component {
   state = {
     username: "",
@@ -8,9 +8,12 @@ export class TodoList extends React.Component {
   addInputValue = (e) => {
     const values = e.target.value;
     this.setState({
-      value: this.state.value + values,
+      //value: this.state.value + values,
+      //ItemsF.push(value)
+      value: ItemsF.push(values),
     });
   };
+
   render() {
     return (
       <div>
@@ -21,6 +24,7 @@ export class TodoList extends React.Component {
         </ul>
         <input type="username" value={this.state.username} />
         <button onClick={this.addInputValue}></button>
+        <button onClick={this.resetBtn}></button>
       </div>
     );
   }
@@ -35,3 +39,7 @@ export class TodoList extends React.Component {
 
 // in order to map through items I pass the items array in app file  as props
 //in components 03 file
+
+//Lists 05
+
+//Modify the `TodoList` by adding a "reset" `button` that clears the `items` array when clicked.
