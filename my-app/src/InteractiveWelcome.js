@@ -7,9 +7,9 @@ export class InteractiveWelcome extends React.Component {
   };
   handleInput = (e) => {
     const newvalues = e.target.value;
-    const name = e.target.name;
+    const type = e.target.type;
     this.setState({
-      [name]: newvalues,
+      [type]: newvalues,
       value: newvalues,
     });
   };
@@ -17,7 +17,7 @@ export class InteractiveWelcome extends React.Component {
   render() {
     return (
       <form>
-        <input type="text" value={this.state.name} />
+        <input type="username" value={this.state.name} />
         <Welcome value={InteractiveWelcome.this.state.value} />
       </form>
     );
