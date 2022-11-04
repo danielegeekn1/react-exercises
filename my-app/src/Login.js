@@ -6,6 +6,13 @@ export class Login extends React.Component {
     remember: "",
     disabled: false,
   };
+  handleInput = (e) => {
+    const name = e.target.name;
+    const type = e.target.type;
+    this.setState({
+      [name]: type === "password",
+    });
+  };
   handleLoginBtn = (e) => {
     this.setState({});
   };
@@ -17,12 +24,29 @@ export class Login extends React.Component {
     });
   };
   render() {
+    const loginStyle = {
+      backgroundColor: this.state.name > 8 ? "red" : "green",
+    };
     return (
       <form>
-        <input type="username" value={this.state.username} />
-        <input type="password" value={this.state.password} />
-        <input type="checkbox" value={this.state.remember} />
-        <button onClick={this.handleLoginBtn}></button>
+        <input
+          type="username"
+          value={this.state.username}
+          onChange={this.handleInput}
+        />
+        <input
+          type="password"
+          value={this.state.password}
+          onChange={this.handleInput}
+        />
+        <input
+          type="checkbox"
+          value={this.state.remember}
+          onChange={this.handleInput}
+        />
+        <button onClick={this.handleLoginBtn} style={loginStyle}>
+          Login Button
+        </button>
         <button onClick={this.handleResetBtn}></button>
       </form>
     );
@@ -44,3 +68,7 @@ export class Login extends React.Component {
 //Forms 04
 
 //Add a "reset" `button` to the `Login` component that clears the content of all three inputs when clicked.
+
+//Modify the `Login` component from 8.3 so that the "login" `button`
+//background color is "red" when the inputted password's length is shorter than 8 characters
+// green otherwise.
