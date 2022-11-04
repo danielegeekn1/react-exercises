@@ -19,7 +19,11 @@ export class Counter extends React.Component {
     return (
       <div>
         <h1>{this.state.count}</h1>
-        <CounterDisplay />
+        <CounterDisplay
+          style={{
+            color: "blue",
+          }}
+        />
       </div>
     );
   }
@@ -39,3 +43,7 @@ export class Counter extends React.Component {
 
 //Modify the `Counter` component so that the interval is initialized within the `componentDidMount` life cycle method instead of the constructor. Is the constructor still required?
 //answer- the constructor is not mandatory but recommended whenever the components are needed to be already rendered in the DOM
+
+//Modify the `Counter` component from 7.1 by styling the counter display using an inline `style` attribute.
+
+// i didn't catch wether i should add th style directly to counterdisplay or in the element witihin it, so i did both
