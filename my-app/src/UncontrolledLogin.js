@@ -17,3 +17,7 @@ export class UncontrolledLogin extends React.Component {
 
 //Implement an `UncontrolledLogin` component that implements all the operations of the `Login` component
 //but does so using uncontrolled components.
+
+//Forms 06
+
+//Modify the `UncontrolledLogin` component so that the `username` input is automatically focused when the compnent renders the first time.
