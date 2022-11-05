@@ -43,3 +43,7 @@ export class TodoList extends React.Component {
 //Lists 05
 
 //Modify the `TodoList` by adding a "reset" `button` that clears the `items` array when clicked.
+
+//render-props-02
+//Change the `TodoList` component so that instead of using the `render` prop it uses the `children` prop.
+//How does this affect the component in which the `TodoList` component is rendered?

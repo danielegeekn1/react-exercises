@@ -1,10 +1,12 @@
 import React from "react";
+import ItemsF from "./Components-03";
 export class Login extends React.Component {
   state = {
     username: "",
     password: "",
     remember: "",
     disabled: false,
+    ItemsF,
   };
   handleInput = (e) => {
     const name = e.target.name;
@@ -13,16 +15,14 @@ export class Login extends React.Component {
       [name]: type === "password",
     });
   };
-  handleLoginBtn = (e) => {
+  /*handleLoginBtn = (e) => {
     this.setState({});
   };
   handleResetBtn = () => {
     this.setState({
-      username: "",
-      password: "",
-      remember: false,
+     
     });
-  };
+  };*/
   render() {
     const loginStyle = {
       backgroundColor: this.state.name > 8 ? "red" : "green",
