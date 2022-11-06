@@ -1,5 +1,7 @@
 import React from "react";
-import ItemsF from "./Components-03";
+
+import { useState } from "react";
+/*
 export class Login extends React.Component {
   state = {
     username: "",
@@ -23,6 +25,7 @@ export class Login extends React.Component {
      
     });
   };*/
+/*
   render() {
     const loginStyle = {
       backgroundColor: this.state.name > 8 ? "red" : "green",
@@ -52,7 +55,59 @@ export class Login extends React.Component {
     );
   }
 }
-
+*/
+export function Login() {
+  const [data, setData] = useState({
+    username: "",
+    password: "",
+    remember: false,
+  });
+  function handleInputChange(e) {
+    const { name, type, value } = e.target;
+    setData((data) => {
+      return {
+        ...data,
+        [name]: type === "password" ?? value,
+      };
+    });
+  }
+  function handleReset() {
+    setData((data) => {
+      return {
+        username: "",
+        password: "",
+        remember: "",
+        disabled: false,
+      };
+    });
+  }
+  console.log(data);
+  return (
+    <div>
+      {" "}
+      <form>
+        <input
+          onChange={handleInputChange}
+          value={data.username}
+          name="username"
+        />
+        <input
+          onChange={handleInputChange}
+          value={data.password}
+          name="password"
+          type="password"
+        />
+        <input
+          onChange={handleInputChange}
+          value={data.remember}
+          type="checkbox"
+          name="remember"
+        />
+      </form>
+      <button onClick={handleReset}></button>
+    </div>
+  );
+}
 //forms-02
 //Create a Login component containing three inputs:
 // a username input, a password input and a remember checkbox.
@@ -72,3 +127,7 @@ export class Login extends React.Component {
 //Modify the `Login` component from 8.3 so that the "login" `button`
 //background color is "red" when the inputted password's length is shorter than 8 characters
 // green otherwise.
+
+//Rewrite the `Login` component from Forms 03 as a function component,
+// and use the `useState` hook to track the state of the `username`, `password` and `remember` inputs.
+//Tip: you can use `useState` more than once.
