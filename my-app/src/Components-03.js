@@ -32,6 +32,7 @@ export class App extends React.Component {
         <Color items={items} />
         <ClickTracker />
         <TodoList items={ItemsF} />
+
         <Container>
           {/*  {(position) => {
             const [x, y] = position;
