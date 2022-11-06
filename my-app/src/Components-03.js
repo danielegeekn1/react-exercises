@@ -1,5 +1,6 @@
 //Write a class component called `App` that renders the `Hello` component within a `div` tag.
 import React from "react";
+import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Color } from "./Color";
 import { Hello } from "./Component-02";
@@ -52,7 +53,7 @@ export class App extends React.Component {
           <Color items={items} />
           <ClickTracker />
           <TodoList items={ItemsF} />
-
+          <ClickCounter initialValue={3} incrementsBy={1} />
           <Container>
             {/*  {(position) => {
             const [x, y] = position;
