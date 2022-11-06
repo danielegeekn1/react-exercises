@@ -33,11 +33,19 @@ export class App extends React.Component {
         <ClickTracker />
         <TodoList items={ItemsF} />
         <Container>
-          {(position) => {
+          {/*  {(position) => {
             const [x, y] = position;
             return (
               <div>
                 The current position is{x},{y}
+              </div>
+            );
+          }}*/}
+          {(title) => {
+            const [title1, title2] = title;
+            return (
+              <div>
+                The first title is {title1}, while the second one is{title2}
               </div>
             );
           }}
