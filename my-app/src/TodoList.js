@@ -1,5 +1,5 @@
 import React from "react";
-import ItemsF from "./Components-03";
+// from "./Components-03";
 export class TodoList extends React.Component {
   state = {
     username: "",
@@ -11,7 +11,7 @@ export class TodoList extends React.Component {
       //value: this.state.value + values,
       //ItemsF.push(value)
       //value: ItemsF.push(values),
-      value: ItemsF,
+      //value: ItemsF,
     });
   };
 
@@ -31,6 +31,7 @@ export class TodoList extends React.Component {
 }
 
 //Lists 03
+
 /*
 
 */
