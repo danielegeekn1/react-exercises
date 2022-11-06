@@ -74,3 +74,7 @@ export class App extends React.Component {
     );
   }
 }
+
+//context-02
+//Consume the LanguageContext within the DisplayLanguage component by using the context consumer
+//and show the selected language in an h1 tag
