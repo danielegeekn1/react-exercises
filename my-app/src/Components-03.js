@@ -3,6 +3,7 @@ import React from "react";
 import { ClickTracker } from "./ClickTracker";
 import { Color } from "./Color";
 import { Hello } from "./Component-02";
+import { Container } from "./Container";
 import { Welcome } from "./Props-01";
 import { TodoList } from "./TodoList";
 const items = [
@@ -31,6 +32,16 @@ export class App extends React.Component {
         <Color items={items} />
         <ClickTracker />
         <TodoList items={ItemsF} />
+        <Container>
+          {(position) => {
+            const [x, y] = position;
+            return (
+              <div>
+                The current position is{x},{y}
+              </div>
+            );
+          }}
+        </Container>
       </div>
     );
   }
