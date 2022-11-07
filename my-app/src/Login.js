@@ -88,16 +88,16 @@ export function Login() {
     setName(e.target.value);
   }
   function handleInputChange(e) {
-    const { name, type, value } = e.target;
+    const { name, value } = e.target;
     setData((data) => {
       return {
         ...data,
-        [name]: type === "password" ?? value,
+        [name]: value,
       };
     });
   }
   function handleReset() {
-    setData((data) => {
+    setData(() => {
       return {
         username: "",
         password: "",
@@ -118,7 +118,7 @@ export function Login() {
           ref={inputRef}
         />
         <h3>Hello there {name}</h3>
-        {/* <input
+        <input
           onChange={handleInputChange}
           value={data.password}
           name="password"
@@ -129,9 +129,10 @@ export function Login() {
           value={data.remember}
           type="checkbox"
           name="remember"
-        /> */}
+        />
       </form>
-      <button onClick={handleReset}></button>
+
+      <button onClick={handleReset}>Reset Button </button>
     </div>
   );
 }

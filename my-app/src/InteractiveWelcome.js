@@ -1,23 +1,26 @@
 import React from "react";
-import { Welcome } from "./Props-01";
+//import { Welcome } from "./Props-01";
 export class InteractiveWelcome extends React.Component {
   state = {
     username: "",
   };
   handleInput = (e) => {
     const newvalues = e.target.value;
-    const type = e.target.type;
+
     this.setState({
-      [type]: newvalues,
-      value: newvalues,
+      username: newvalues,
     });
   };
 
   render() {
     return (
       <form>
-        <input type="username" value={this.state.name} />
-        <Welcome value={InteractiveWelcome.this.state.value} />
+        <input
+          type="username"
+          value={this.state.username}
+          onChange={this.handleInput}
+        />
+        {/* <Welcome value={InteractiveWelcome.this.state.value} /> */}
       </form>
     );
   }
