@@ -26,10 +26,12 @@ const items = [
 ];
 
 const ItemsF = ["billy", "kate", "jane"];
+
 export class App extends React.Component {
   state = {
     language: "en",
   };
+
   handleLanguageChange = (e) => {
     this.setState({
       language: e.target.value,
@@ -64,6 +66,7 @@ export class App extends React.Component {
             );
           }}*/}
             {(title) => {
+              title = ["My Title", "My Title 2"];
               const [title1, title2] = title;
               return (
                 <div>

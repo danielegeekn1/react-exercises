@@ -2,7 +2,7 @@ import React from "react";
 export class Container extends React.Component {
   state = {
     position: [0, 0],
-    title: ["My Title", "My Title 2"],
+    title: [],
   };
   handleMouseMove = (e) => {
     const x = e.clientX;
@@ -14,8 +14,7 @@ export class Container extends React.Component {
   render() {
     return (
       <div className="customStyle" onMouseMove={this.handleMouseMove}>
-        {this.props.children(this.state.position)}
-        {this.props.title(this.state.title)}
+        {this.props.children(this.state.title)}
       </div>
     );
   }
