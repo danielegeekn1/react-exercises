@@ -5,6 +5,9 @@ import { ClickTracker } from "./ClickTracker";
 import { Color } from "./Color";
 import { Hello } from "./Component-02";
 import { Container } from "./Container";
+import { Counter } from "./Counter";
+import { CounterButton } from "./CounterButton";
+import { CounterDisplay } from "./CounterDisplay";
 import { DisplayLanguage } from "./LanguageContext";
 import { Login } from "./Login";
 import { Welcome } from "./Props-01";
@@ -50,6 +53,9 @@ export class App extends React.Component {
           <option value="it">ITALIAN</option>
         </select>
         <DisplayLanguage.Provider value={this.state.language}>
+          <CounterButton initialValue={1} incrementsBy={1} />
+          <Counter initialValue={0} incrementor={1} timeout={1000} />
+          <CounterDisplay initialValue={1} />
           <Login />
           <Sum number1={1} number2={3} />
           <Hello />
