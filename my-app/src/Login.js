@@ -1,7 +1,8 @@
 import React from "react";
-
+import { useState, useEffect } from "react";
+import { useRef } from "react";
 //import { useState } from "react";
-
+/*
 export class Login extends React.Component {
   state = {
     username: "",
@@ -28,18 +29,20 @@ export class Login extends React.Component {
   handleLoginBtn = (e) => {
     this.setState({});
   };
-  /*handleResetBtn = () => {
+  handleResetBtn = () => {
     this.setState({
      
     });
-  };*/
+  };
 
   render() {
     const loginStyle = {
       backgroundColor: this.state.name > 8 ? "red" : "green",
     };
+
     return (
       <form>
+        <input />
         <input
           type="username"
           value={this.state.username}
@@ -67,14 +70,23 @@ export class Login extends React.Component {
     );
   }
 }
-/*
 
+*/
 export function Login() {
   const [data, setData] = useState({
     username: "",
     password: "",
     remember: false,
   });
+  const [name, setName] = useState("daniele");
+
+  const inputRef = useRef();
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+  function handleNameChange(e) {
+    setName(e.target.value);
+  }
   function handleInputChange(e) {
     const { name, type, value } = e.target;
     setData((data) => {
@@ -97,14 +109,16 @@ export function Login() {
   console.log(data);
   return (
     <div>
-      {" "}
       <form>
+        <input value={name} onChange={handleNameChange} />
         <input
           onChange={handleInputChange}
           value={data.username}
           name="username"
+          ref={inputRef}
         />
-        <input
+        <h3>Hello there {name}</h3>
+        {/* <input
           onChange={handleInputChange}
           value={data.password}
           name="password"
@@ -115,12 +129,12 @@ export function Login() {
           value={data.remember}
           type="checkbox"
           name="remember"
-        />
+        /> */}
       </form>
       <button onClick={handleReset}></button>
     </div>
   );
-}*/
+}
 //forms-02
 //Create a Login component containing three inputs:
 // a username input, a password input and a remember checkbox.
@@ -144,3 +158,6 @@ export function Login() {
 //Rewrite the `Login` component from Forms 03 as a function component,
 // and use the `useState` hook to track the state of the `username`, `password` and `remember` inputs.
 //Tip: you can use `useState` more than once.
+
+//Modify the `Login` component from 15.2 to so that the `username` input is automatically focused
+// when the component renders, by creating a `ref` with `useRef` and attaching it to the username input;
