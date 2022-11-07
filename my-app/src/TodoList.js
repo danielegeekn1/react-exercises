@@ -2,19 +2,19 @@ import React from "react";
 // from "./Components-03";
 export class TodoList extends React.Component {
   state = {
-    username: "",
     value: "",
+    items: ["kate", " daniele", "francesco"],
   };
   addInputValue = (e) => {
-    // const values = e.target.value;
-    this.setState({
-      //value: this.state.value + values,
-      //ItemsF.push(value)
-      //value: ItemsF.push(values),
-      //value: ItemsF,
+    this.setState((d) => {
+      this.state.items.push(d.value);
     });
   };
-
+  inputControl = (e) => {
+    this.setState((state) => {
+      return {};
+    });
+  };
   render() {
     return (
       <div>
@@ -22,9 +22,13 @@ export class TodoList extends React.Component {
           <li key={item + index}>{item}</li>
         ))}
 
-        <input type="username" value={this.state.username} />
+        <input
+          onChange={this.inputControl}
+          type="username"
+          value={this.state.username}
+        />
         <button onClick={this.addInputValue}></button>
-        <button onClick={this.resetBtn}></button>
+        <button></button>
       </div>
     );
   }
