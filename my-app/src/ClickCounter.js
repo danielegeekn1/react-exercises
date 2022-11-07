@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { CounterButton } from "./CounterButton";
+
 import { DisplayLanguage } from "./LanguageContext";
 const Strings = {
   en: {
@@ -42,6 +42,7 @@ export class ClickCounter extends React.Comonent {
     );
   }
 }
+
 */
 export function ClickCounter({ initialValue, incrementsBy }) {
   const [count, setCount] = useState(initialValue);
@@ -53,6 +54,7 @@ export function ClickCounter({ initialValue, incrementsBy }) {
       };
     });
   }
+
   return (
     <div>
       <DisplayLanguage.Consumer>
@@ -60,16 +62,18 @@ export function ClickCounter({ initialValue, incrementsBy }) {
           return (
             <div>
               {Strings[language].current_time}
+              <h1>The current language is :{language}</h1>
               <h1>{count}</h1>
-              <button onClick={handleCounter}></button>
+              <button onClick={handleCounter}>increments</button>
             </div>
           );
         }}
-        <CounterButton />
+        {/*<CounterButton />*/}
       </DisplayLanguage.Consumer>
     </div>
   );
 }
+
 //Create a ClickCounter class component that increments a counter every time a user clicks on a button. Render both the current value of the counter and the button within the ClickCounter component.
 
 //Create a ClickCounter class component that increments a counter every time a user clicks on a button. Render both the current value of the counter and the button within the ClickCounter component

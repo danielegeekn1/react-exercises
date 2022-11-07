@@ -6,9 +6,9 @@ export class ClickTracker extends React.Component {
   handleInput = (e) => {
     const value = e.target.value;
     const name = e.target.name;
-    const type = e.target.type;
+    //const type = e.target.type;
     this.setState({
-      [name]: type === "reset" ? value : name,
+      [name]: value,
     });
   };
   render() {
@@ -19,19 +19,25 @@ export class ClickTracker extends React.Component {
           value={this.state.username}
           type="submit"
           onClick={this.handleInput}
-        ></button>
+        >
+          Submit
+        </button>
         <button
           name="username"
           value={this.state.username}
           type="button"
           onClick={this.handleInput}
-        ></button>
+        >
+          Button
+        </button>
         <button
           name="username"
           value={this.state.username}
           type="reset"
           onClick={this.handleInput}
-        ></button>
+        >
+          Reset
+        </button>
       </div>
     );
   }
