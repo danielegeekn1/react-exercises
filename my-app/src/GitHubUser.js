@@ -49,7 +49,7 @@ export function GithubUser({ username }) {
     }
   }
   useEffect(() => {
-    fetchData("gianmarcotoso");
+    fetchData(username);
   }, [username]);
   return (
     <div>
