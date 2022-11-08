@@ -1,8 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { useRef } from "react";
+//import { useState, useEffect } from "react";
+//import { useRef } from "react";
 //import { useState } from "react";
-/*
+
 export class Login extends React.Component {
   state = {
     username: "",
@@ -31,7 +31,10 @@ export class Login extends React.Component {
   };
   handleResetBtn = () => {
     this.setState({
-     
+      username: "",
+      password: "",
+      remember: false,
+      disabled: true,
     });
   };
 
@@ -71,7 +74,7 @@ export class Login extends React.Component {
   }
 }
 
-*/
+/*
 export function Login() {
   const [data, setData] = useState({
     username: "",
@@ -136,6 +139,8 @@ export function Login() {
     </div>
   );
 }
+
+*/
 //forms-02
 //Create a Login component containing three inputs:
 // a username input, a password input and a remember checkbox.
