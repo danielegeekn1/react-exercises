@@ -31,17 +31,6 @@ export function Welcome({ name, age }) {
       <p>Welcome {name}</p>
       <p>Your age is {age}</p>
       <Age name="daniele" />
-      {/* {Age.props.age > 18 ? (
-        <p>Your age is {age}</p>
-      ) : (
-        <p>You are very strong</p>
-      )}
-      {Age.props.age > 18 && <Age age={33} />}
-      {Age.props.age && <Age />}
-      {Age.props.age > 18 && Age.props.age < 65 && <Age age={33} />}
-      {Age.props.age > 18 &&
-        Age.props.age < 65 &&
-        Age.props.name === "john" && <Age age={33} name="john" />} */}
     </div>
   );
 }

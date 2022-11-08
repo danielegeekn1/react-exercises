@@ -53,7 +53,7 @@ export function ClickCounter({ initialValue, incrementsBy }) {
   const handleInputChange = (e) => {
     setChange(e.target.value);
   };
-  */
+*/
   const handleCounter = () => {
     setInterval(() => {
       setCount((state) => {
@@ -72,9 +72,9 @@ export function ClickCounter({ initialValue, incrementsBy }) {
             <div>
               {Strings[language].current_time}
               <h1>The current language is :{language}</h1>
-
-              {/* <h1>{change}</h1>
+              {/* 
               <input value={change} onChange={handleInputChange} /> */}
+              {/* <h1>{change}</h1> */}
               <button onClick={handleCounter}>increments</button>
               <h1>{count}</h1>
             </div>
