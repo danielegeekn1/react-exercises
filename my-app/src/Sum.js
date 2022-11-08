@@ -14,4 +14,6 @@ export function Sum({ number1, number2, age = 33 }) {
 }
 
 //What happens if the numbers prop of the Sum component is not set?
+
+// in this case you can set a default value, by adding it within the parenthesys as i've done
 //How can you set a default value for this prop?
