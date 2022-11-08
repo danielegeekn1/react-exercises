@@ -27,8 +27,7 @@ export class TodoList extends React.Component {
           type="username"
           value={this.state.username}
         />
-        <button onClick={this.addInputValue}></button>
-        <button></button>
+        <button onClick={this.addInputValue}>ADD VALUE TO THE ARRAY</button>
       </div>
     );
   }

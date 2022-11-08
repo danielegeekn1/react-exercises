@@ -82,7 +82,9 @@ export class App extends React.Component {
               const [title1, title2] = title;
               return (
                 <div>
-                  The first title is {title1}, while the second one is{title2}
+                  <h1>
+                    The first title is {title1}, while the second one is{title2}
+                  </h1>
                 </div>
               );
             }}
