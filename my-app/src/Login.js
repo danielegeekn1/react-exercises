@@ -1,8 +1,8 @@
 import React from "react";
-//import { useState, useEffect } from "react";
-//import { useRef } from "react";
-//import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRef } from "react";
 
+/*
 export class Login extends React.Component {
   state = {
     username: "",
@@ -73,16 +73,15 @@ export class Login extends React.Component {
     );
   }
 }
-
-/*
+*/
 export function Login() {
+  const [name, setName] = useState("daniele");
   const [data, setData] = useState({
     username: "",
     password: "",
     remember: false,
+    disabled: true,
   });
-  const [name, setName] = useState("daniele");
-
   const inputRef = useRef();
   useEffect(() => {
     inputRef.current.focus();
@@ -91,13 +90,16 @@ export function Login() {
     setName(e.target.value);
   }
   function handleInputChange(e) {
-    const { name, value } = e.target;
-    setData((data) => {
-      return {
-        ...data,
-        [name]: value,
-      };
-    });
+    const { name, value, checked, type } = e.target;
+    setData(
+      {
+        [name]: type === "checkbox" ? checked : value,
+      },
+      () =>
+        setData({
+          disabled: !this.username && !this.password ? false : true,
+        })
+    );
   }
   function handleReset() {
     setData(() => {
@@ -140,7 +142,6 @@ export function Login() {
   );
 }
 
-*/
 //forms-02
 //Create a Login component containing three inputs:
 // a username input, a password input and a remember checkbox.
