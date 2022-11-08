@@ -2,7 +2,7 @@
 // passed as a prop, and renders some of the data within a div tag.
 //The API to query is https://api.github.com/users/${username}.
 import { useEffect, useState } from "react";
-export function GithubUser(username) {
+export function GithubUser({ username }) {
   const [data, setData] = useState(null);
   async function fetchData(username) {
     try {
@@ -19,7 +19,7 @@ export function GithubUser(username) {
   }, [username]);
   return (
     <div>
-      <h1>{data.name}</h1>
+      <h1>{data.login}</h1>
       <h2>{data.nodeid}</h2>
     </div>
   );
