@@ -1,5 +1,6 @@
 //Create a `Welcome` class component that receives a `name` prop and renders the `Welcome, {name}!` message within a `p` tag. Render this component to you `App` component, passing it a `name` prop of your choosing.
 import React from "react";
+import { Age } from "./Age";
 //import { Age } from "./Age";
 /*
 export class Welcome extends React.Component {
@@ -29,6 +30,7 @@ export function Welcome({ name, age }) {
     <div>
       <p>Welcome {name}</p>
       <p>Your age is {age}</p>
+      <Age name="daniele" />
       {/* {Age.props.age > 18 ? (
         <p>Your age is {age}</p>
       ) : (

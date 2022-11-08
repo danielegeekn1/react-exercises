@@ -1,5 +1,6 @@
 //Write a class component called `App` that renders the `Hello` component within a `div` tag.
 import React from "react";
+import { Age } from "./Age";
 import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Color } from "./Color";
@@ -58,6 +59,7 @@ export class App extends React.Component {
           <Counter initialValue={0} incrementor={1} timeout={1000} />
           <CounterDisplay initialValue={1} />
           <InteractiveWelcome />
+          <Age name="daniele" />
           <Login />
           <Sum number1={1} number2={3} />
           <Hello />
