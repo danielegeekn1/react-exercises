@@ -1,6 +1,6 @@
 //Write a class component called `App` that renders the `Hello` component within a `div` tag.
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Age } from "./Age";
 import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
@@ -115,6 +115,10 @@ export class App extends React.Component {
 //react-router-02 ex
 //Add a new Route to the /counter path
 // that renders the Counter component from useState 01
+
+//react-router-04 ex
+//Add three Links within the main App component and use them
+//to navigate to all three routes.
 export function App() {
   const [language, setLanguage] = useState("en");
   function handleLanguageChange(e) {
@@ -122,6 +126,9 @@ export function App() {
   }
   return (
     <div>
+      <div>
+        <Link to="/">Home</Link>||<Link to="/counter"></Link>
+      </div>
       <Routes>
         <Route path="/" element={<Welcome name="daniele" />}></Route>
         <Route path="/counter" element={<Counter />} />
