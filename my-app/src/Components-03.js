@@ -132,6 +132,9 @@ export function App() {
       <Routes>
         <Route path="/" element={<Welcome name="daniele" />}></Route>
         <Route path="/counter" element={<Counter />} />
+        <Route path="users/:username" element={<ShowGitHubUser />}>
+          Show github user route
+        </Route>
       </Routes>
 
       <select value={language} onChange={handleLanguageChange}>
