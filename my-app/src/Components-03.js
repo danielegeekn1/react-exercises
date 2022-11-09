@@ -120,6 +120,9 @@ export class App extends React.Component {
 //react-router-04 ex
 //Add three Links within the main App component and use them
 //to navigate to all three routes.
+
+//react-router-05 ex
+//Add a Not Found route that renders when a user navigates to a path that does not exist
 export function App() {
   const [language, setLanguage] = useState("en");
   function handleLanguageChange(e) {
@@ -137,6 +140,15 @@ export function App() {
         <Route path="users/:username" element={<ShowGitHubUser />}>
           Show github user route
         </Route>
+        <Route
+          path="*"
+          element={
+            <div>
+              <p>This page does not exist, go back to the home page</p>
+              <Link to="/">Go Home</Link>
+            </div>
+          }
+        />
       </Routes>
 
       <select value={language} onChange={handleLanguageChange}>
