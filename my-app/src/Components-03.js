@@ -58,6 +58,7 @@ export class App extends React.Component {
         </select>
 
         <DisplayLanguage.Provider value={this.state.language}>
+          <Counter />
           <GitHubUserList />
           <Age name="daniele" age={25} />
           <CounterButton initialValue={1} incrementsBy={1} />
