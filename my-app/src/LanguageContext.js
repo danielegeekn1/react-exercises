@@ -6,3 +6,7 @@ export const DisplayLanguage = createContext("en");
 //that allows the user to select the language, and pass it as a value to the Provider.
 
 // I added the DisplayLanguage.Consumer in ClickCounter
+
+//useContext ex
+//Rewrite the DisplayLanguage component from Context 02 to be a function component
+//and access the LanguageContext through the useContext hook.
