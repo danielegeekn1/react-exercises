@@ -30,9 +30,14 @@ export function GitHubUser({ username }) {
 }
 */
 export function GitHubUser({ username }) {
-  const { data, error, loading, dataFetcher } = useGitHubUser();
+  const { data, error, loading, dataMutator } = useGitHubUser(username);
+  /*
   const handleGitHubUser = () => {
     dataFetcher(username);
+  };
+  */
+  const handleGitHubUser = () => {
+    dataMutator();
   };
   return (
     <div>

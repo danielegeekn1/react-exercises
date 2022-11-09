@@ -19,7 +19,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { DisplayLanguage } from "./LanguageContext";
 import { Login } from "./Login";
 import { Welcome } from "./Props-01";
-import { ShowGitHubUser } from "./ShowGitHubUser";
+//import { ShowGitHubUser } from "./ShowGitHubUser";
 import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
 const items = [
@@ -138,13 +138,14 @@ export function App() {
       <Routes>
         <Route path="/" element={<Welcome name="daniele" />}></Route>
         <Route path="/counter" element={<Counter />} />
-        <Route path="users/:username" element={<ShowGitHubUser />}>
+        {/* <Route path="users/:username" element={<ShowGitHubUser />}>
           <Route
             path="githubuser"
             element={<GitHubUser username="gianmarcotoso" />}
           />
           Show github user route
-        </Route>
+        </Route> */}
+
         <Route
           path="*"
           element={
