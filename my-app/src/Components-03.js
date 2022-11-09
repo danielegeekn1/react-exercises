@@ -132,12 +132,17 @@ export function App() {
     <div>
       <div>
         <Link to="/">Home</Link>||<Link to="/counter">Counter</Link>||
-        <Link to="users/:username">Username list </Link>
+        <Link to="users/:username">Username list </Link>||
+        <Link to="githubuser"></Link>
       </div>
       <Routes>
         <Route path="/" element={<Welcome name="daniele" />}></Route>
         <Route path="/counter" element={<Counter />} />
         <Route path="users/:username" element={<ShowGitHubUser />}>
+          <Route
+            path="githubuser"
+            element={<GitHubUser username="gianmarcotoso" />}
+          />
           Show github user route
         </Route>
         <Route

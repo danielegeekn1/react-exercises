@@ -1,8 +1,22 @@
 //Extract the logic to fetch a Github user's data from the GithubUser component from useEffect 03
 
-import { useState } from "react";
-
 //into a custom hook called useGithubUser.
+
+//SWR-01 EX
+//Modify the useGithubUser custom hook from Custom Hooks 03
+// to use the useSWR hook to fetch the data of a Github user
+
+import useSWR from "swr";
+const fetcher = (url) => fetch(url).then((resp) => resp.json());
+export function useGitHubUser() {
+  const { data, error } = useSWR(`https://api.github.com/users`, fetcher);
+  return {
+    data,
+    error,
+    loading: !data && !error,
+  };
+}
+/*
 export function useGitHubUser() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -29,6 +43,7 @@ export function useGitHubUser() {
     fetcher("gianmarcotoso");
   }, []);
   */
+/*
   return {
     data,
     error,
@@ -36,6 +51,7 @@ export function useGitHubUser() {
     dataFetcher: fetcher,
   };
 }
+*/
 //custom-hooks-04
 
 //Modify the useGithubUser hook to return the function to fetch the data of a Github user

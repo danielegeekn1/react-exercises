@@ -4,63 +4,7 @@
 
 import { useGitHubUser } from "./useGitHubUser";
 
-/*import { useEffect, useState } from "react";
-
-export function GitHubUser({ username }) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  async function fetchData() {
-    try {
-      const resp = await fetch(` https://api.github.com/users/${username}`);
-      const json = await resp.json();
-      setData(json);
-    } catch (error) {
-      setError(error);
-      console.log(error);
-      setData(null);
-    } finally {
-      setLoading(false);
-    }
-  }
-  useEffect(() => {
-    fetchData(username);
-  }, [username]);
-  return (
-    <div>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error...</p>}
-      {data && <p>{data.username}</p>}
-    </div>
-  );
-}
-*/
 /*
-import { useEffect, useState } from "react";
-export function GithubUser({ username }) {
-  const [data, setData] = useState(null);
-  async function fetchData(username) {
-    try {
-      const resp = await fetch(`https://api.github.com/users/${username}`);
-      const data = await resp.json();
-      console.log(data);
-
-      setData(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  useEffect(() => {
-    fetchData("gianmarcotoso");
-  }, [username]);
-  return (
-    <div>
-      <h1>{data.name}</h1>
-      <h2>{data.nodeid}</h2>
-    </div>
-  );
-}
-*/
 
 export function GitHubUser({ username }) {
   const { data, error, loading, dataFetcher } = useGitHubUser();
@@ -77,6 +21,29 @@ export function GitHubUser({ username }) {
               <p>{users.login}</p>
               <p>{users.id}</p>
             </div>
+          ))}
+        </div>
+      )}
+      {loading && <p>Data are still loading, just a little patience</p>}
+    </div>
+  );
+}
+*/
+export function GitHubUser({ username }) {
+  const { data, error, loading, dataFetcher } = useGitHubUser();
+  const handleGitHubUser = () => {
+    dataFetcher(username);
+  };
+  return (
+    <div>
+      <button onClick={handleGitHubUser}>Load user data</button>
+      {!error && !loading && (
+        <div>
+          {data.map((users) => (
+            <ul key={users.id}>
+              <li>{users.login}</li>
+              <li>{users.id}</li>
+            </ul>
           ))}
         </div>
       )}
