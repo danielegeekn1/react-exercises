@@ -9,6 +9,7 @@ import { Container } from "./Container";
 import { Counter } from "./Counter";
 import { CounterButton } from "./CounterButton";
 import { CounterDisplay } from "./CounterDisplay";
+import { GitHubUser } from "./GitHubUser";
 
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { DisplayLanguage } from "./LanguageContext";
@@ -56,6 +57,7 @@ export class App extends React.Component {
           <option value="it">ITALIAN</option>
         </select>
         <DisplayLanguage.Provider value={this.state.language}>
+          <GitHubUser />
           <CounterButton initialValue={1} incrementsBy={1} />
           <Counter initialValue={0} incrementor={1} timeout={1000} />
           <CounterDisplay initialValue={1} />
