@@ -19,6 +19,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { DisplayLanguage } from "./LanguageContext";
 import { Login } from "./Login";
 import { Welcome } from "./Props-01";
+import { ShowGitHubUser } from "./ShowGitHubUser";
 import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
 const items = [
@@ -127,11 +128,15 @@ export function App() {
   return (
     <div>
       <div>
-        <Link to="/">Home</Link>||<Link to="/counter"></Link>
+        <Link to="/">Home</Link>||<Link to="/counter">Counter</Link>
       </div>
+
       <Routes>
         <Route path="/" element={<Welcome name="daniele" />}></Route>
         <Route path="/counter" element={<Counter />} />
+        <Route path="users/:username" element={<ShowGitHubUser />}>
+          Show github user route
+        </Route>
       </Routes>
 
       <select value={language} onChange={handleLanguageChange}>
