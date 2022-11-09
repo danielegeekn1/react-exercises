@@ -1,7 +1,7 @@
 //import React, { useEffect, useState } from "react";
 import React from "react";
 import { CounterDisplay } from "./CounterDisplay";
-
+/*
 export class Counter extends React.Component {
   state = {
     count: this.props.initialValue,
@@ -30,8 +30,8 @@ export class Counter extends React.Component {
     );
   }
 }
-
-/*
+*/
+import { useState, useEffect } from "react";
 export function Counter({ initialValue, incrementor, timeout }) {
   const [count, setCount] = useState(initialValue);
   useEffect(() => {
@@ -50,7 +50,6 @@ export function Counter({ initialValue, incrementor, timeout }) {
 
   return (
     <div>
-      <h1>{count}</h1>
       <CounterDisplay
         style={{
           color: "blue",
@@ -59,7 +58,7 @@ export function Counter({ initialValue, incrementor, timeout }) {
     </div>
   );
 }
-*/
+
 //State 01
 
 //Create a `Counter` class component with an internal state containing a `count` property, initialized to `0`. The `Counter` component should render the `count` property within an `h1` tag, and the `count` property should be incremented by `1` every second;
