@@ -5,14 +5,22 @@
 import { useEffect, useState } from "react";
 export function GitHubUserList() {
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   async function fetchUsernames() {
     try {
       const resp = await fetch("https://api.github.com/users");
       const json = await resp.json();
-      console.log(json);
-      setData(json);
+      if (resp.status === 200) {
+        console.log(json);
+        setData(json);
+      } else {
+        setError(new Error("data not fetched"));
+      }
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
+      setError(error.message);
+      setLoading(false);
     }
   }
   useEffect(() => {
@@ -20,9 +28,14 @@ export function GitHubUserList() {
   }, []);
   return (
     <div>
-      <ul>
-        <li>{data.users}</li>
-      </ul>
+      {!error && !loading && (
+        <div>
+          {data.map((users) => (
+            <li>{users.login}</li>
+          ))}
+        </div>
+      )}
+      {loading && <p>Data are still loading</p>}
     </div>
   );
 }
