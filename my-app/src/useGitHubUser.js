@@ -9,6 +9,10 @@
 //SWR-02 EX
 //Modify the useGithubUser hook so that, if the username is null, no request is made.
 
+//SWR-03 EX
+//Modify the useGithubUser hook so that it returns a function
+//to manually refetch the data when invoked.
+
 import useSWR from "swr";
 const fetcher = (url) => fetch(url).then((resp) => resp.json());
 export function useGitHubUser(username) {
@@ -16,6 +20,7 @@ export function useGitHubUser(username) {
     `https://api.github.com/users/${username}`,
     fetcher
   );
+  //FUNCTION TO REFRESH THE FETCHING OF THE DATA
   const mutateData = () => {
     mutate();
   };
