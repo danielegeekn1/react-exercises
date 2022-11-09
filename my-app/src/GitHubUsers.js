@@ -9,16 +9,15 @@ export function GitHubUsers() {
       {isLoading && <h3>Loading</h3>}
       {error && <h3>Error has occured</h3>}
       {users && !error && (
-        <ul>
+        <div>
           {users.map((user) => (
-            <div>
-              <li key={user.login}>
+            <ul key={user.login}>
+              <li>
                 <Link to={`/users/${user.login}`}>{user.login}</Link>
               </li>
-              <li>{user}</li>
-            </div>
+            </ul>
           ))}
-        </ul>
+        </div>
       )}
       <Outlet />
     </div>

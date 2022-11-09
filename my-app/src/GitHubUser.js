@@ -2,6 +2,7 @@
 // passed as a prop, and renders some of the data within a div tag.
 //The API to query is https://api.github.com/users/${username}.
 
+import { useParams } from "react-router-dom";
 import { useGitHubUser } from "./useGitHubUser";
 
 /*
@@ -29,8 +30,9 @@ export function GitHubUser({ username }) {
   );
 }
 */
-export function GitHubUser({ username }) {
-  const { data, error, loading, dataMutator } = useGitHubUser(username);
+export function GitHubUser() {
+  const { username } = useParams();
+  const { users, error, loading, dataMutator } = useGitHubUser(username);
   /*
   const handleGitHubUser = () => {
     dataFetcher(username);
@@ -44,15 +46,15 @@ export function GitHubUser({ username }) {
       <button onClick={handleGitHubUser}>Load user data</button>
       {!error && !loading && (
         <div>
-          {data.map((users) => (
-            <ul key={users.id}>
-              <li>{users.login}</li>
-              <li>{users.id}</li>
+          {users.map((user) => (
+            <ul key={user.id}>
+              <li>{user.login}</li>
+              <li>{user.id}</li>
             </ul>
           ))}
+          {loading && <p>Data are still loading, just a little patience</p>}
         </div>
       )}
-      {loading && <p>Data are still loading, just a little patience</p>}
     </div>
   );
 }

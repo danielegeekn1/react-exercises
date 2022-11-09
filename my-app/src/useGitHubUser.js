@@ -12,7 +12,7 @@
 import useSWR from "swr";
 const fetcher = (url) => fetch(url).then((resp) => resp.json());
 export function useGitHubUser(username) {
-  const { data, error, mutate } = useSWR(
+  const { resp, error, mutate } = useSWR(
     `https://api.github.com/users/${username}`,
     fetcher
   );
@@ -20,9 +20,9 @@ export function useGitHubUser(username) {
     mutate();
   };
   return {
-    data,
+    users: resp,
     error,
-    loading: !data && !error,
+    loading: !resp && !error,
     dataMutator: mutateData,
   };
 }

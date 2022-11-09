@@ -13,7 +13,9 @@ import { Counter } from "./Counter";
 import { CounterButton } from "./CounterButton";
 import { CounterDisplay } from "./CounterDisplay";
 import { GitHubUser } from "./GitHubUser";
+
 import { GitHubUserList } from "./GitHubUserList";
+import { GitHubUsers } from "./GitHubUsers";
 
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { DisplayLanguage } from "./LanguageContext";
@@ -132,7 +134,7 @@ export function App() {
     <div>
       <div>
         <Link to="/">Home</Link>||<Link to="/counter">Counter</Link>||
-        <Link to="users/:username">Username list </Link>||
+        <Link to="users">Users list</Link>
         <Link to="githubuser"></Link>
       </div>
       <Routes>
@@ -155,6 +157,10 @@ export function App() {
             </div>
           }
         />
+
+        <Route path="users" element={<GitHubUsers />}>
+          <Route path=":id" element={<GitHubUser />}></Route>
+        </Route>
       </Routes>
 
       <select value={language} onChange={handleLanguageChange}>
@@ -162,7 +168,7 @@ export function App() {
         <option value="it"></option>
       </select>
       <DisplayLanguage.Provider value={language}>
-        <GitHubUser username="gianmarcotoso" />
+        {/* <GitHubUser username="gianmarcotoso" /> */}
         <ControlInputs />
         <Counter />
         <GitHubUserList />
