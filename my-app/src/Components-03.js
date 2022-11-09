@@ -112,6 +112,9 @@ export class App extends React.Component {
 
 
 */
+//react-router-02 ex
+//Add a new Route to the /counter path
+// that renders the Counter component from useState 01
 export function App() {
   const [language, setLanguage] = useState("en");
   function handleLanguageChange(e) {
@@ -121,6 +124,7 @@ export function App() {
     <div>
       <Routes>
         <Route path="/" element={<Welcome name="daniele" />}></Route>
+        <Route path="/counter" element={<Counter />} />
       </Routes>
 
       <select value={language} onChange={handleLanguageChange}>
