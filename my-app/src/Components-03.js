@@ -120,7 +120,7 @@ export function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Welcome />}></Route>
+        <Route path="/" element={<Welcome name="daniele" />}></Route>
       </Routes>
 
       <select value={language} onChange={handleLanguageChange}>
