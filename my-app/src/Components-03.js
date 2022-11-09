@@ -1,5 +1,6 @@
 //Write a class component called `App` that renders the `Hello` component within a `div` tag.
 import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import { Age } from "./Age";
 import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
@@ -118,6 +119,10 @@ export function App() {
   }
   return (
     <div>
+      <Routes>
+        <Route path="/" element={<Welcome />}></Route>
+      </Routes>
+
       <select value={language} onChange={handleLanguageChange}>
         <option value="en"></option>
         <option value="it"></option>
