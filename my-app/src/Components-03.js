@@ -6,6 +6,7 @@ import { ClickTracker } from "./ClickTracker";
 import { Color } from "./Color";
 import { Hello } from "./Component-02";
 import { Container } from "./Container";
+import { ControlInputs } from "./ControlInputs";
 
 import { Counter } from "./Counter";
 import { CounterButton } from "./CounterButton";
@@ -59,6 +60,7 @@ export class App extends React.Component {
         </select>
 
         <DisplayLanguage.Provider value={this.state.language}>
+          <ControlInputs />
           <Counter />
           <GitHubUserList />
           <Age name="daniele" age={25} />
