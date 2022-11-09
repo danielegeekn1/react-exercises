@@ -2,6 +2,8 @@
 // passed as a prop, and renders some of the data within a div tag.
 //The API to query is https://api.github.com/users/${username}.
 
+import { useGitHubUser } from "./useGitHubUser";
+
 /*import { useEffect, useState } from "react";
 
 export function GitHubUser({ username }) {
@@ -59,3 +61,22 @@ export function GithubUser({ username }) {
   );
 }
 */
+
+export function GitHubUser() {
+  const { data, error, loading } = useGitHubUser();
+  return (
+    <div>
+      {!error && !loading && (
+        <div>
+          {data.map((users) => (
+            <div>
+              <p>{users.login}</p>
+              <p>{users.id}</p>
+            </div>
+          ))}
+        </div>
+      )}
+      {loading && <p>Data are still loading, just a little patience</p>}
+    </div>
+  );
+}

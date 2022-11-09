@@ -11,6 +11,7 @@ import { ControlInputs } from "./ControlInputs";
 import { Counter } from "./Counter";
 import { CounterButton } from "./CounterButton";
 import { CounterDisplay } from "./CounterDisplay";
+import { GitHubUser } from "./GitHubUser";
 import { GitHubUserList } from "./GitHubUserList";
 
 import { InteractiveWelcome } from "./InteractiveWelcome";
@@ -60,6 +61,7 @@ export class App extends React.Component {
         </select>
 
         <DisplayLanguage.Provider value={this.state.language}>
+          <GitHubUser />
           <ControlInputs />
           <Counter />
           <GitHubUserList />
