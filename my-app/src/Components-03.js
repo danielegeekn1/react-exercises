@@ -61,7 +61,7 @@ export class App extends React.Component {
         </select>
 
         <DisplayLanguage.Provider value={this.state.language}>
-          <GitHubUser />
+          <GitHubUser username="gianmarcotoso" />
           <ControlInputs />
           <Counter />
           <GitHubUserList />

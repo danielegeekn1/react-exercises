@@ -62,10 +62,14 @@ export function GithubUser({ username }) {
 }
 */
 
-export function GitHubUser() {
-  const { data, error, loading } = useGitHubUser();
+export function GitHubUser({ username }) {
+  const { data, error, loading, dataFetcher } = useGitHubUser();
+  const handleGitHubUser = () => {
+    dataFetcher(username);
+  };
   return (
     <div>
+      <button onClick={handleGitHubUser}>Load user data</button>
       {!error && !loading && (
         <div>
           {data.map((users) => (
