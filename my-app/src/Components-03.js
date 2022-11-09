@@ -19,6 +19,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { DisplayLanguage } from "./LanguageContext";
 import { Login } from "./Login";
 import { Welcome } from "./Props-01";
+import { ShowGitHubUser } from "./ShowGitHubUser";
 import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
 const items = [
@@ -127,7 +128,8 @@ export function App() {
   return (
     <div>
       <div>
-        <Link to="/">Home</Link>||<Link to="/counter"></Link>
+        <Link to="/">Home</Link>||<Link to="/counter">Counter</Link>||
+        <Link to="users/:username">Username list </Link>
       </div>
       <Routes>
         <Route path="/" element={<Welcome name="daniele" />}></Route>
