@@ -4,11 +4,9 @@ export class ClickTracker extends React.Component {
     username: "",
   };
   handleInput = (e) => {
-    const value = e.target.value;
-    const name = e.target.name;
-    const type = e.target.type;
+    const { value, name } = e.target;
     this.setState({
-      [name]: type === "reset" ? value : name,
+      [name]: value,
     });
   };
   render() {
