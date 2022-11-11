@@ -1,35 +1,20 @@
 import React from "react";
 export class ClickTracker extends React.Component {
   state = {
-    username: "",
+    count: "",
   };
-  handleInput = (e) => {
-    const { value, name } = e.target;
+  handleTracker = (e) => {
     this.setState({
-      [name]: value,
+      count: e.target.innerHTML,
     });
   };
   render() {
     return (
       <div>
-        <button
-          name="username"
-          value={this.state.username}
-          type="submit"
-          onClick={this.handleInput}
-        ></button>
-        <button
-          name="username"
-          value={this.state.username}
-          type="button"
-          onClick={this.handleInput}
-        ></button>
-        <button
-          name="username"
-          value={this.state.username}
-          type="reset"
-          onClick={this.handleInput}
-        ></button>
+        <h1>The last clicked button is :{this.state.count}</h1>
+        <button onClick={this.handleTracker}>button1</button>
+        <button onClick={this.handleTracker}>button2</button>
+        <button onClick={this.handleTracker}>button3</button>
       </div>
     );
   }
