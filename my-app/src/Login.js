@@ -7,7 +7,7 @@ export class Login extends React.Component {
     disabled: true,
     //ItemsF,
   };
-  handleInput = (e) => {
+  onLogin = (e) => {
     const name = e.target.name;
     const type = e.target.type;
     const value = e.target.value;
@@ -22,9 +22,7 @@ export class Login extends React.Component {
         })
     );
   };
-  handleLoginBtn = (e) => {
-    this.setState({});
-  };
+
   /*handleResetBtn = () => {
     this.setState({
      
@@ -40,17 +38,17 @@ export class Login extends React.Component {
         <input
           type="username"
           value={this.state.username}
-          onChange={this.handleInput}
+          onChange={this.onLogin}
         />
         <input
           type="password"
           value={this.state.password}
-          onChange={this.handleInput}
+          onChange={this.onLogin}
         />
         <input
           type="checkbox"
           value={this.state.remember}
-          onChange={this.handleInput}
+          onChange={this.onLogin}
         />
         <button
           disabled={this.state.disabled}
@@ -59,7 +57,7 @@ export class Login extends React.Component {
         >
           Login Button
         </button>
-        <button onClick={this.handleResetBtn}></button>
+        <button onClick={this.handleReset}>reset</button>
       </form>
     );
   }
