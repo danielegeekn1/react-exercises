@@ -2,15 +2,13 @@ import React from "react";
 import { Welcome } from "./Props-01";
 export class InteractiveWelcome extends React.Component {
   state = {
-    username: "",
-    value: "",
+    name: "daniele",
   };
   handleInput = (e) => {
     const newvalues = e.target.value;
-    const name = e.target.name;
+
     this.setState({
-      [name]: newvalues,
-      value: newvalues,
+      name: newvalues,
     });
   };
 
@@ -18,7 +16,7 @@ export class InteractiveWelcome extends React.Component {
     return (
       <form>
         <input type="text" value={this.state.name} />
-        <Welcome value={InteractiveWelcome.this.state.value} />
+        <Welcome name={this.state.name} />
       </form>
     );
   }
