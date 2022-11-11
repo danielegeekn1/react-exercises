@@ -52,7 +52,7 @@ export class Login extends React.Component {
         />
         <button
           disabled={this.state.disabled}
-          onClick={this.handleLoginBtn}
+          onClick={this.onLogin}
           style={loginStyle}
         >
           Login Button
