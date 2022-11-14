@@ -12,6 +12,7 @@ import { ControlInputs } from "./ControlInputs";
 import { Counter } from "./Counter";
 import { CounterButton } from "./CounterButton";
 import { CounterDisplay } from "./CounterDisplay";
+import FilteredList from "./FilteredList";
 import { GitHubUser } from "./GitHubUser";
 
 import { GitHubUserList } from "./GitHubUserList";
@@ -125,11 +126,21 @@ export class App extends React.Component {
 
 //react-router-05 ex
 //Add a Not Found route that renders when a user navigates to a path that does not exist
+const objectList = [
+  {
+    id: 1,
+    age: 33,
+    name: "daniele",
+  },
+  { id: 2, age: 44, name: "Giulia" },
+  { id: 3, age: 16, name: "Simon" },
+];
 export function App() {
   const [language, setLanguage] = useState("en");
   function handleLanguageChange(e) {
     setLanguage(e.target.value);
   }
+
   return (
     <div>
       <div>
@@ -168,6 +179,7 @@ export function App() {
         <option value="it"></option>
       </select>
       <DisplayLanguage.Provider value={language}>
+        <FilteredList objectList={objectList} />
         {/* <GitHubUser username="gianmarcotoso" /> */}
         <ControlInputs />
         <Counter />
