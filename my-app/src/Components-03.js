@@ -134,10 +134,15 @@ export function App() {
     <div>
       <div>
         <Link to="/">Home</Link>||<Link to="/counter">Counter</Link>||
-        <Link to="users">Users list</Link>
-        <Link to="githubuser"></Link>
+        <Link to="users">Users list</Link>||
+        <Link to="githubuser">github users</Link>||{" "}
+        <Link to="githubuserlist">githubuserlists</Link>
       </div>
       <Routes>
+        <Route path="/githubuserlist" element={<GitHubUserList />}>
+          <Route index element={<h1>Add a user and select it</h1>}></Route>
+        </Route>
+
         <Route path="/" element={<Welcome name="daniele" />}></Route>
         <Route path="/counter" element={<Counter />} />
         {/* <Route path="users/:username" element={<ShowGitHubUser />}>
