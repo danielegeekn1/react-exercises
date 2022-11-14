@@ -21,7 +21,6 @@ const items = [
   },
 ];
 
-const ItemsF = ["billy", "kate", "jane"];
 export class App extends React.Component {
   render() {
     return (
@@ -30,7 +29,7 @@ export class App extends React.Component {
         <Welcome name="Daniele" age={33} />
         <Color items={items} />
         <ClickTracker />
-        <TodoList items={ItemsF} />
+        <TodoList />
       </div>
     );
   }
