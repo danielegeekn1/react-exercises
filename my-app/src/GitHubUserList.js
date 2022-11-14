@@ -8,12 +8,14 @@ export function GitHubUserList() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   async function fetchUsernames() {
+    setLoading(true);
+    setError(null);
     try {
       const resp = await fetch("https://api.github.com/users");
       const json = await resp.json();
       if (resp.status === 200) {
         console.log(json);
-        setData.push(json);
+        setData(json);
       } else {
         setError(new Error("data not fetched"));
       }
@@ -36,9 +38,9 @@ export function GitHubUserList() {
           ))}
         </div>
       )}
-      {loading && <p>Data are still loading</p>}
+      {!error && loading && <p>Data are still loading</p>}
       <input type="text" />
-      <button>Add item to the array</button>
+      <button onClick={fetchUsernames}>Add usernames</button>
     </div>
   );
 }

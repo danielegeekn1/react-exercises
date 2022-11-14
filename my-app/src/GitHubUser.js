@@ -39,7 +39,7 @@ export function GithubUser() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  async function fetchData(username) {
+  async function fetchDatas(username) {
     setLoading(true);
     setError(null);
     try {
@@ -57,7 +57,7 @@ export function GithubUser() {
     }
   }
   useEffect(() => {
-    fetchData("gianmarcotoso");
+    fetchDatas("gianmarcotoso");
   }, []);
   return (
     <div>
