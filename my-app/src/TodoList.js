@@ -17,6 +17,11 @@ export class TodoList extends React.Component {
     let { items } = this.state;
     items.pop();
   };
+  resetEverything = () => {
+    this.setState({
+      items: [],
+    });
+  };
   render() {
     return (
       <div>
@@ -27,6 +32,9 @@ export class TodoList extends React.Component {
           <input type="username" onChange={this.saveInput} />
           <button onClick={this.addNewItem}>Add value</button>
           <button onClick={this.resetItems}>Reset values</button>
+          <button onClick={this.resetEverything}>
+            Reset items array as default set in state{" "}
+          </button>
         </ul>
       </div>
     );
