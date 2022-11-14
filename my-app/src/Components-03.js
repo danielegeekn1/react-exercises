@@ -22,7 +22,14 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList />
+        <TodoList
+          render={({ items, reset }) => (
+            <div>
+              <h1>{items}</h1>
+              <button onClick={reset}>Reset Items</button>
+            </div>
+          )}
+        />
       </div>
     );
   }

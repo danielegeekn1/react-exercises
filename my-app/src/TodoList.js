@@ -20,6 +20,7 @@ export class TodoList extends React.Component {
   render() {
     return (
       <div>
+        <h1>{this.props.render({ ...this.state, reset: this.resetItems })}</h1>
         <ul>
           {this.state.items.map((item, i) => (
             <li key={i}>{item}</li>
@@ -42,3 +43,11 @@ export class TodoList extends React.Component {
 
 // in order to map through items I pass the items array in app file  as props
 //in components 03 file
+
+//render-props-01
+//Modify the TodoList component so that, instead of rendering the items array within the ul tag,
+//it calls the function passed to its render prop, passing it the items array as a parameter, as well as the function required to delete the item. Pass a render prop to the TodoList
+//component to correctly render and interact with the items array.
+
+//i passed the todolist component within the app component, passing to it the render props as wrote here above in todo list
+//so as required, the items array, and the reset function
