@@ -4,23 +4,26 @@ export class TodoList extends React.Component {
   state = {
     username: "",
     value: "",
+    items: ["kate", "jane", "george"],
   };
-  addInputValue = (e) => {
-    const values = e.target.value;
-    this.setState({
-      value: this.state.value + values,
-    });
+  saveInput = (e) => {
+    this.setState({ input: e.target.value });
   };
+  addNewItem = () => {
+    let { items, input } = this.state;
+    items.push(input);
+  };
+
   render() {
     return (
       <div>
         <ul>
-          {this.props.items.map((item, index) => (
-            <li key={item + index}>{item}</li>
+          {this.state.items.map((item, i) => (
+            <li key={i}>{item}</li>
           ))}
+          <input type="username" onChange={this.saveInput} />
+          <button onClick={this.addNewItem}>Add value</button>
         </ul>
-        <input type="username" value={this.state.username} />
-        <button onClick={this.addInputValue}></button>
       </div>
     );
   }
