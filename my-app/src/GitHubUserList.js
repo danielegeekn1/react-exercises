@@ -13,9 +13,7 @@ export function GitHubUserList() {
       const json = await resp.json();
       if (resp.status === 200) {
         console.log(json);
-        const dataJson = json;
-        //setData(json);
-        setData.push(dataJson);
+        setData.push(json);
       } else {
         setError(new Error("data not fetched"));
       }
