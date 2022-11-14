@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { DisplayLanguage } from "./LanguageContext";
 const Strings = {
@@ -54,7 +53,12 @@ export function ClickCounter({ initialValue, incrementsBy }) {
       };
     });
   }
-
+  useEffect(
+    (e) => {
+      setCount(e.target.value);
+    },
+    [count]
+  );
   return (
     <div>
       <DisplayLanguage.Consumer>
