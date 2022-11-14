@@ -13,7 +13,10 @@ export class TodoList extends React.Component {
     let { items, input } = this.state;
     items.push(input);
   };
-
+  resetItems = () => {
+    let { items } = this.state;
+    items.pop();
+  };
   render() {
     return (
       <div>
@@ -23,6 +26,7 @@ export class TodoList extends React.Component {
           ))}
           <input type="username" onChange={this.saveInput} />
           <button onClick={this.addNewItem}>Add value</button>
+          <button onClick={this.resetItems}>Reset values</button>
         </ul>
       </div>
     );
