@@ -1,15 +1,15 @@
 //import React, { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import { DisplayLanguage } from "./LanguageContext";
-const Strings = {
-  en: {
-    current_time: "Current time is",
-  },
-  it: {
-    current_time: "la ora attuale è ",
-  },
-};
+// import { DisplayLanguage } from "./LanguageContext";
+// const Strings = {
+//   en: {
+//     current_time: "Current time is",
+//   },
+//   it: {
+//     current_time: "la ora attuale è ",
+//   },
+// };
 /*
 export class ClickCounter extends React.Comonent {
   state = {
@@ -46,42 +46,38 @@ export class ClickCounter extends React.Comonent {
 */
 export function ClickCounter({ initialValue, incrementsBy }) {
   const [count, setCount] = useState(initialValue);
-  /*const [change, setChange] = useState(1);
+  const handleCounter = (e) => {
+    console.log(e);
+    setCount(() => {
+      return {
+        count: initialValue + incrementsBy,
+      };
+    });
+  };
+  useEffect(
+    (e) => {
+      setCount(e.target.value);
+    },
+    [count]
+  );
+  /*setCount(() => {
+      return {
+        count: initialValue + incrementsBy,
+      };
+    });*/
   useEffect(() => {
-    handleInputChange();
-  }, [change]);
-  const handleInputChange = (e) => {
-    setChange(e.target.value);
-  };
-  */
-  const handleCounter = () => {
-    setInterval(() => {
-      setCount((state) => {
-        return {
-          count: state.count + incrementsBy,
-        };
-      });
+    const interval = setInterval(() => {
+      console.log("set interval started");
     }, 1000);
-  };
-
+    return () => {
+      clearInterval(interval);
+      console.log("component did unmount, and so set interval stopped");
+    };
+  }, []);
   return (
     <div>
-      <DisplayLanguage.Consumer>
-        {(language) => {
-          return (
-            <div>
-              {Strings[language].current_time}
-              <h1>The current language is :{language}</h1>
-
-              {/* <h1>{change}</h1>
-              <input value={change} onChange={handleInputChange} /> */}
-              <button onClick={handleCounter}>increments</button>
-              <h1>{count}</h1>
-            </div>
-          );
-        }}
-        {/*<CounterButton />*/}
-      </DisplayLanguage.Consumer>
+      <h1>{count}</h1>
+      <button onClick={handleCounter}>increments</button>
     </div>
   );
 }
