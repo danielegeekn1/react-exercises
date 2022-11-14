@@ -44,7 +44,7 @@ export class App extends React.Component {
           <option value="en">ENGLISH</option>
           <option value="it">ITALIAN</option>
         </select>
-        <DisplayLanguage.Provider>
+        <DisplayLanguage.Provider value={this.state.language}>
           <Hello />
           <Welcome name="Daniele" age={33} />
           <Color items={items} />
