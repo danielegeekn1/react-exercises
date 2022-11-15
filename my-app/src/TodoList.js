@@ -22,9 +22,20 @@ export class TodoList extends React.Component {
       items: [],
     });
   };
-  removeCorrItem = () => {
+  /*
+  removeCurrItem = (index) => {
     let { items } = this.state;
-    items.pop();
+    items((prev) => {
+      return prev.filter((_, i) => i !== index);
+    });
+  };
+*/
+  removeCurrItem = (index) => {
+    this.setState((prev) => {
+      return {
+        items: prev.items.filter((_, i) => i !== index),
+      };
+    });
   };
   render() {
     return (
@@ -33,7 +44,7 @@ export class TodoList extends React.Component {
           {this.state.items.map((item, i) => (
             <ul key={i}>
               <li key={i}>{item}</li>
-              <button onClick={this.removeCorrItem}>
+              <button onClick={() => this.removeCurrItem(i)}>
                 remove corrisponding item
               </button>
             </ul>
