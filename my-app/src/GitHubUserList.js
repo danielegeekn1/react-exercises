@@ -31,12 +31,12 @@ export function GitHubUserList() {
   }, []);
   return (
     <div>
-      {!error && !loading && (
-        <div>
-          {data.map((users) => (
-            <li>{users.login}</li>
+      {!error && loading && (
+        <ul>
+          {data.map((users, i) => (
+            <li key={i}>{users.login}</li>
           ))}
-        </div>
+        </ul>
       )}
       {!error && loading && <p>Data are still loading</p>}
       <input type="text" />
