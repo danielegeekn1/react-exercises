@@ -3,6 +3,7 @@
 //showing a `GithubUser` component for each username entered.
 //The usernames should be added to the array using an input field and a button.
 import { useEffect, useState } from "react";
+
 export function GitHubUserList() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
