@@ -4,7 +4,16 @@
 //and reset the form every time the initialData value changes.
 
 const CarDetail = ({ initialValue }) => {
-  return <form action="" method="post"></form>;
+  return (
+    <form action="" method="POST">
+      <input type="text" id="model" name="model" />
+      <label htmlFor="model">Car model</label>
+      <input type="text" id="year" name="year" />
+      <label htmlFor="year">Car year</label>
+      <input type="text" id="color" name="color" />
+      <label htmlFor="color">Car color</label>
+    </form>
+  );
 };
 
 export default CarDetail;
