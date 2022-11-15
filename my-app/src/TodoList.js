@@ -22,12 +22,21 @@ export class TodoList extends React.Component {
       items: [],
     });
   };
+  removeCorrItem = () => {
+    let { items } = this.state;
+    items.pop();
+  };
   render() {
     return (
       <div>
-        <ul>
+        <main>
           {this.state.items.map((item, i) => (
-            <li key={i}>{item}</li>
+            <ul key={i}>
+              <li key={i}>{item}</li>
+              <button onClick={this.removeCorrItem}>
+                remove corrisponding item
+              </button>
+            </ul>
           ))}
           <input type="username" onChange={this.saveInput} />
           <button onClick={this.addNewItem}>Add value</button>
@@ -35,7 +44,7 @@ export class TodoList extends React.Component {
           <button onClick={this.resetEverything}>
             Reset items array as default set in state{" "}
           </button>
-        </ul>
+        </main>
       </div>
     );
   }
