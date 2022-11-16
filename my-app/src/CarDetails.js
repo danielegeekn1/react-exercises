@@ -3,15 +3,19 @@
 //Allow the form to receive a initialData prop that contains the default values of each input,
 //and reset the form every time the initialData value changes.
 
+import { useRef } from "react";
+
 const CarDetail = ({ initialValue }) => {
+  const form = useRef();
   return (
-    <form action="" method="POST">
+    <form value={form} action="" method="POST">
       <input type="text" id="model" name="model" />
       <label htmlFor="model">Car model</label>
       <input type="text" id="year" name="year" />
       <label htmlFor="year">Car year</label>
       <input type="text" id="color" name="color" />
       <label htmlFor="color">Car color</label>
+      <button>Submit button</button>
     </form>
   );
 };

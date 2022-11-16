@@ -1,6 +1,7 @@
 //Write a class component called `App` that renders the `Hello` component within a `div` tag.
 import React from "react";
 import { Age } from "./Age";
+import CarDetail from "./CarDetails";
 import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Color } from "./Color";
@@ -59,6 +60,7 @@ export class App extends React.Component {
         </select>
 
         <DisplayLanguage.Provider value={this.state.language}>
+          <CarDetail />
           <GitHubUserList />
 
           <Age name="daniele" age={25} />
