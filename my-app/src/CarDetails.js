@@ -4,7 +4,6 @@
 //and reset the form every time the initialData value changes.
 
 import { useRef } from "react";
-import { FormControl } from "react-bootstrap";
 
 const CarDetail = ({
   initialValue = {
@@ -34,10 +33,24 @@ const CarDetail = ({
   };
   */
   const resetModel = () => {
-    if (FormControl.current.value !== initialValue.model) {
-      form.current.value = "";
+    if (form.current.value !== initialValue.model) {
+      const modelValue = (form.current.value = "");
+      console.log(modelValue);
     }
   };
+  const resetYear = () => {
+    if (form.current.value !== initialValue.year) {
+      const yearValue = (form.current.value = "");
+      console.log(yearValue);
+    }
+  };
+  const resetColor = () => {
+    if (form.current.value !== initialValue.color) {
+      const colorValue = (form.current.value = "");
+      console.log(colorValue);
+    }
+  };
+
   return (
     <form onSubmit={handleForm}>
       <input
@@ -56,6 +69,7 @@ const CarDetail = ({
         id="year"
         name="year"
         defaultValue={initialValue.year}
+        onChange={resetYear}
       />
       <label htmlFor="year">Car year</label>
 
@@ -65,6 +79,7 @@ const CarDetail = ({
         id="color"
         name="color"
         defaultValue={initialValue.color}
+        onChange={resetColor}
       />
       <label htmlFor="color">Car color</label>
 
