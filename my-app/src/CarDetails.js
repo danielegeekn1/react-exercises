@@ -7,14 +7,24 @@ import { useRef } from "react";
 
 const CarDetail = ({ initialValue }) => {
   const form = useRef();
+  const handleForm = (e) => {
+    e.preventDefault();
+    const model = e.target.elements.model.value;
+    const year = e.target.elements.year.value;
+    const color = e.target.elements.color.value;
+    console.log({ model, year, color });
+  };
   return (
-    <form value={form} action="" method="POST">
+    <form value={form} onSubmit={handleForm}>
       <input type="text" id="model" name="model" />
       <label htmlFor="model">Car model</label>
+
       <input type="text" id="year" name="year" />
       <label htmlFor="year">Car year</label>
+
       <input type="text" id="color" name="color" />
       <label htmlFor="color">Car color</label>
+
       <button>Submit button</button>
     </form>
   );
