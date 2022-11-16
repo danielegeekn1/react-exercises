@@ -4,9 +4,16 @@
 //and reset the form every time the initialData value changes.
 
 import { useRef } from "react";
+import { FormControl } from "react-bootstrap";
 
-const CarDetail = ({ initialValue }) => {
-  const form = useRef();
+const CarDetail = ({
+  initialValue = {
+    model: "audi",
+    year: 2022,
+    color: "blue",
+  },
+}) => {
+  const form = useRef(null);
   const handleForm = (e) => {
     e.preventDefault();
     const model = e.target.elements.model.value;
@@ -14,15 +21,51 @@ const CarDetail = ({ initialValue }) => {
     const color = e.target.elements.color.value;
     console.log({ model, year, color });
   };
+  /*
+  const resetValue = (e) => {
+    const { model, year, color } = initialValue;
+    if (form.current.value !== model) {
+      form.current.value = e.target.elements.model.value;
+    } else if (form.current.value !== year) {
+      form.current.value = e.target.elements.year.value;
+    } else if (form.current.value !== color) {
+      form.current.value = e.target.elements.color.value;
+    }
+  };
+  */
+  const resetModel = () => {
+    if (FormControl.current.value !== initialValue.model) {
+      form.current.value = "";
+    }
+  };
   return (
-    <form value={form} onSubmit={handleForm}>
-      <input type="text" id="model" name="model" />
+    <form onSubmit={handleForm}>
+      <input
+        ref={form}
+        type="text"
+        id="model"
+        name="model"
+        defaultValue={initialValue.model}
+        onChange={resetModel}
+      />
       <label htmlFor="model">Car model</label>
 
-      <input type="text" id="year" name="year" />
+      <input
+        ref={form}
+        type="text"
+        id="year"
+        name="year"
+        defaultValue={initialValue.year}
+      />
       <label htmlFor="year">Car year</label>
 
-      <input type="text" id="color" name="color" />
+      <input
+        ref={form}
+        type="text"
+        id="color"
+        name="color"
+        defaultValue={initialValue.color}
+      />
       <label htmlFor="color">Car color</label>
 
       <button>Submit button</button>
