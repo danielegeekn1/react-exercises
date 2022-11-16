@@ -13,9 +13,9 @@ export class UncontrolledLogin extends React.Component {
   render() {
     return (
       <form ref={this._formRef} onSubmit={this.handleFormSubmit}>
-        <input type="username" />
-        <input type="password" />
-        <input type="checkbox" />
+        <input type="username" name="username" />
+        <input type="password" name="password" />
+        <input type="checkbox" name="remember" />
       </form>
     );
   }
