@@ -25,7 +25,7 @@ export class Login extends React.Component {
   };*/
   render() {
     const loginStyle = {
-      backgroundColor: this.state.name > 8 ? "red" : "green",
+      backgroundColor: this.state.password > 8 ? "green" : "red",
     };
     return (
       <form>
