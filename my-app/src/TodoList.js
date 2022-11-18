@@ -21,14 +21,14 @@ export class TodoList extends React.Component {
     return (
       <div>
         <h1>{this.props.render({ ...this.state, reset: this.resetItems })}</h1>
-        <ul>
+        {/* <ul>
           {this.state.items.map((item, i) => (
             <li key={i}>{item}</li>
-          ))}
+          ))} 
           <input type="username" onChange={this.saveInput} />
           <button onClick={this.addNewItem}>Add value</button>
           <button onClick={this.resetItems}>Reset values</button>
-        </ul>
+        </ul>*/}
       </div>
     );
   }
