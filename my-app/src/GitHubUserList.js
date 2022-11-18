@@ -2,7 +2,7 @@
 //Create a GithubUserList component that maintains an array of usernames,
 //showing a `GithubUser` component for each username entered.
 //The usernames should be added to the array using an input field and a button.
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GithubUser } from "./GitHubUser";
 
 export function GitHubUserList() {
@@ -28,11 +28,8 @@ export function GitHubUserList() {
       setLoading(false);
     }
   }
-  
-  useEffect(() => {
-    fetchUsernames();
-  }, []);
   */
+
   const addGithubUsername = async () => {
     setLoading(true);
     setError(null);
@@ -51,7 +48,9 @@ export function GitHubUserList() {
       setLoading(false);
     }
   };
-
+  useEffect(() => {
+    addGithubUsername();
+  }, []);
   return (
     <div>
       {!error && loading && (
