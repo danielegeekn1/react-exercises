@@ -35,10 +35,11 @@ export function GitHubUser({ username }) {
 */
 
 import { useEffect, useState } from "react";
-export function GithubUser() {
+export function GithubUser({ username }) {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
   async function fetchDatas(username) {
     setLoading(true);
     setError(null);
@@ -56,18 +57,26 @@ export function GithubUser() {
       setData(null);
     }
   }
+
   useEffect(() => {
     fetchDatas("gianmarcotoso");
   }, []);
   return (
     <div>
       <h1>Github user -useEffect 04 ex</h1>
-      {!error && loading && <h1>It is working</h1>}
-      {data.map((user) => (
-        <ul>
-          <li>{user.login}</li>
-        </ul>
-      ))}
+      <h1>It is working</h1>
+      {data.map((user, i) => {
+        if (!error && loading) {
+          return (
+            <ul key={i}>
+              <li>{user.login}</li>
+              <li>{username}</li>
+            </ul>
+          );
+        } else {
+          return <h1>not working</h1>;
+        }
+      })}
     </div>
   );
 }
