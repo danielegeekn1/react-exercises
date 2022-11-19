@@ -25,7 +25,11 @@ export class App extends React.Component {
         <TodoList
           render={({ items, reset }) => (
             <div>
-              <h1>{items}</h1>
+              <ul>
+                {items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
               <button onClick={reset}>Reset Items</button>
             </div>
           )}
