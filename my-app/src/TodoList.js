@@ -17,6 +17,7 @@ export class TodoList extends React.Component {
   resetItems = () => {
     let { items } = this.state;
     items.pop();
+    this.setState({ items });
   };
   resetEverything = () => {
     this.setState({
