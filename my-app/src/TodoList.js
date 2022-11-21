@@ -12,10 +12,12 @@ export class TodoList extends React.Component {
   addNewItem = () => {
     let { items, input } = this.state;
     items.push(input);
+    this.setState({ input });
   };
   resetItems = () => {
     let { items } = this.state;
     items.pop();
+    this.setState({ items });
   };
   render() {
     return (
