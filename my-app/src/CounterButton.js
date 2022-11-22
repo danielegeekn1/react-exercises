@@ -12,7 +12,10 @@ export class CounterButton extends React.Component {
     });
   };
   render() {
+    this.props.render({ handleCount: this.handleCounter });
+
     return <button onClick={this.handleCounter}></button>;
   }
 }
-//Extract the button within a new component called CounterButton and render it within the ClickCounter component. How can you pass the onClick event handler to the CounterButton component?
+//Extract the button within a new component called CounterButton and render it within the ClickCounter component.
+// How can you pass the onClick event handler to the CounterButton component?
