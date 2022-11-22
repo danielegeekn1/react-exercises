@@ -22,7 +22,9 @@ export class TodoList extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.props.render({ ...this.state, reset: this.resetItems })}</h1>
+        <h1>
+          {this.props.children({ ...this.state, reset: this.resetItems })}
+        </h1>
         {/* <ul>
           {this.state.items.map((item, i) => (
             <li key={i}>{item}</li>

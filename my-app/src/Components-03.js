@@ -23,7 +23,7 @@ export class App extends React.Component {
     return (
       <div>
         <TodoList
-          render={({ items, reset }) => (
+          children={({ items, reset }) => (
             <div>
               <ul>
                 {items.map((item, i) => (
