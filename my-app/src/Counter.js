@@ -3,17 +3,18 @@ export class Counter extends React.Component {
   state = {
     count: 0,
   };
-  constructor(props) {
-    super(props);
-    setInterval(() => {
+  componentDidMount() {
+    this.CounterCount = setInterval(() => {
       this.setState((state) => {
         return {
-          count: state.count > 10 && state.count + 1,
+          count: state.count + 1,
         };
       });
     }, 1000);
   }
-
+  componentWillUnMount() {
+    clearInterval(this.CounterCount);
+  }
   render() {
     return <h1>{this.state.count}</h1>;
   }
@@ -21,3 +22,5 @@ export class Counter extends React.Component {
 //State 01
 
 //Create a `Counter` class component with an internal state containing a `count` property, initialized to `0`. The `Counter` component should render the `count` property within an `h1` tag, and the `count` property should be incremented by `1` every second;
+
+//components--lifecycle -01 -ex between lesson
