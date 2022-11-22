@@ -1,0 +1,8 @@
+Components-09 ex between lesson
+
+Can you render the Message component directly within the App component? 
+What happens if you do?
+
+Yes you can, in this case it'll be rendered from the app component, which is generaly as best practice dictates
+the main component, which is rendered only from the index.js file, the main file we have once we create our app
+with npx create-react-app
