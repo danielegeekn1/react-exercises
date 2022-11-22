@@ -1,34 +1,83 @@
-import React from "react";
-import ItemsF from "./Components-03";
+import React, { useState } from "react";
+/*
 export class TodoList extends React.Component {
   state = {
     username: "",
     value: "",
+    items: ["kate", "jane", "george"],
   };
-  addInputValue = (e) => {
-    // const values = e.target.value;
-    this.setState({
-      //value: this.state.value + values,
-      //ItemsF.push(value)
-      //value: ItemsF.push(values),
-      value: ItemsF,
-    });
+  saveInput = (e) => {
+    this.setState({ input: e.target.value });
   };
-
+  addNewItem = () => {
+    let { items, input } = this.state;
+    items.push(input);
+    this.setState({ input });
+  };
+  resetItems = () => {
+    let { items } = this.state;
+    items.pop();
+    this.setState({ items });
+  };
   render() {
     return (
       <div>
-        {this.props.items.map((item, index) => (
-          <li key={item + index}>{item}</li>
-        ))}
+        <h1>
+          {this.props.children({ ...this.state, reset: this.resetItems })}
+        </h1>
+        
 
-        <input type="username" value={this.state.username} />
-        <button onClick={this.addInputValue}></button>
-        <button onClick={this.resetBtn}></button>
+      
       </div>
     );
   }
 }
+*/
+
+function TodoList() {
+  const [items, setItems] = useState(["kate", "jane", "george"]);
+  const saveInput = (e) => {
+    setItems({ input: e.target.value });
+  };
+  const addNewItem = () => {
+    let { input } = items;
+    items.push(input);
+    setItems({ input });
+  };
+  const resetItems = () => {
+    items.pop();
+    setItems({ items });
+  };
+  const resetEverything = () => {
+    setItems({
+      items: [],
+    });
+  };
+  const removeCurrItem = (index) => {
+    items((prev) => {
+      return prev.filter((_, i) => i !== index);
+    });
+  };
+  return (
+    <div>
+      {items.map((item, i) => (
+        <ul key={i}>
+          <li>{item}</li>
+          <button onClick={removeCurrItem}>Remove corrisponding items</button>
+        </ul>
+      ))}
+      <input type="username" onChange={saveInput} />
+      <button onClick={addNewItem}>Add value</button>
+      <button onClick={resetItems}>Reset values</button>
+      <button onClick={resetEverything}>
+        Reset items array as default set in state{" "}
+      </button>
+      {/* <h1>{this.props.children({ ...this.state, reset: this.resetItems })}</h1> */}
+    </div>
+  );
+}
+
+export default TodoList;
 
 //Lists 03
 /*

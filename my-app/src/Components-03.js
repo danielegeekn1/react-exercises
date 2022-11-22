@@ -23,7 +23,7 @@ const items = [
   },
 ];
 
-const ItemsF = ["billy", "kate", "jane"];
+//const ItemsF = ["billy", "kate", "jane"];
 export class App extends React.Component {
   state = {
     language: "en",
@@ -49,7 +49,7 @@ export class App extends React.Component {
           <Welcome name="Daniele" age={33} />
           <Color items={items} />
           <ClickTracker />
-          <TodoList items={ItemsF} />
+          <TodoList />
 
           <Container>
             {/*  {(position) => {
