@@ -4,7 +4,7 @@ export class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <strong>Welcome {this.props.name}</strong>
+        <p>Welcome {this.props.name}</p>
         <p>Your age is {this.props.age}</p>
       </div>
     );
