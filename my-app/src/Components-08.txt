@@ -1,0 +1,6 @@
+//ex components-08 - ex between lessons
+Can you use the `Hello` component more than once in the `App` component? 
+What happens if you do?
+
+Yes It is possibile to use a component, as the 'Hello' component, more than once in our App
+in this case, it'll simply render it as many times as you pass it, to it you could also add different props
