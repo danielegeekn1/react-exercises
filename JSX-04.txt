@@ -1,0 +1,3 @@
+EX JSX-04 -ex between lesson
+What happens if the name variable contains a JSX expression instead of a string?
+In React is possible to pass any kind of data, also expressions in that case the expressione needs to be put in curley brackets

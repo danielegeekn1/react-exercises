@@ -1,0 +1,10 @@
+STATE-02-ex between lessons 
+
+When calling setState to increment the counter, 
+should the parameter be a function or an object? Why?
+
+When using the method setState to change the property/ies of our state, this method takes as parameter
+either an Object or a callback, accordingly to the case
+1CASE - if we need to change our state property , but to do this calculation, we do not need to refer to the originall value, then we could use an object
+2CASE - if we need to change our state property, and to do that, we need to start calculating from our origin state property value, then we'd call a callback
+in which we add as parameter our first original value, and a function to set how this should change

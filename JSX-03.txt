@@ -1,0 +1,6 @@
+JSX-03 EX - EX BETWEEN LESSONS
+
+What happens if the name variable is not passed to the function?
+
+That variable could not be used within that function, because a variable needs to be passed to the function
+in order to be used
