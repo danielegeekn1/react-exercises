@@ -8,11 +8,12 @@ export class Counter extends React.Component {
     setInterval(() => {
       this.setState((state) => {
         return {
-          count: state.count + 1,
+          count: state.count > 10 && state.count + 1,
         };
       });
     }, 1000);
   }
+
   render() {
     return <h1>{this.state.count}</h1>;
   }
