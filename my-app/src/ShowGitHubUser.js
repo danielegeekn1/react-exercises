@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { GitHubUser } from "./GitHubUser";
 
 export function ShowGitHubUser() {
@@ -6,6 +6,7 @@ export function ShowGitHubUser() {
   return (
     <div>
       <GitHubUser username={username} />
+      <Outlet />
     </div>
   );
 }

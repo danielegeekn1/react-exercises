@@ -134,11 +134,13 @@ export function App() {
         <Link to="/">Home</Link>||<Link to="/counter">Counter</Link>||
         <Link to="users/:username">Username list </Link>
       </div>
+      <GitHubUser />
+      <GitHubUserList />
       <Routes>
         <Route path="/" element={<Welcome name="daniele" />}></Route>
         <Route path="/counter" element={<Counter />} />
-        <Route path="users/:username" element={<ShowGitHubUser />}>
-          Show github user route
+        <Route path="/users" element={<GitHubUserList />}>
+          <Route path=":username" element={<ShowGitHubUser />} />
         </Route>
         <Route
           path="*"
@@ -159,7 +161,7 @@ export function App() {
         <GitHubUser username="gianmarcotoso" />
         <ControlInputs />
         <Counter />
-        <GitHubUserList />
+
         <Age name="daniele" age={25} />
         <CounterButton initialValue={1} incrementsBy={1} />
 

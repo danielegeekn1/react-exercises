@@ -15,7 +15,8 @@ export function GitHubUserList() {
         console.log(json);
         const dataJson = json;
         //setData(json);
-        setData.push(dataJson);
+        setData(dataJson);
+        setLoading(false);
       } else {
         setError(new Error("data not fetched"));
       }
@@ -38,7 +39,7 @@ export function GitHubUserList() {
           ))}
         </div>
       )}
-      {loading && <p>Data are still loading</p>}
+
       <input type="text" />
       <button>Add item to the array</button>
     </div>

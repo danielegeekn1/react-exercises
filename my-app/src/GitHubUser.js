@@ -67,20 +67,27 @@ export function GitHubUser({ username }) {
   const handleGitHubUser = () => {
     dataFetcher(username);
   };
+
   return (
     <div>
       <button onClick={handleGitHubUser}>Load user data</button>
       {!error && !loading && (
+        // <div>
+        //   {data.map((users) => (
+        //     <div>
+        //       <p>{users.login}</p>
+        //       <p>{users.id}</p>
+        //     </div>
+        //   ))}
+        // </div>
         <div>
-          {data.map((users) => (
-            <div>
-              <p>{users.login}</p>
-              <p>{users.id}</p>
-            </div>
-          ))}
+          <p>{data.login}</p>
+          <p>{data.id}</p>
         </div>
       )}
-      {loading && <p>Data are still loading, just a little patience</p>}
+      {loading && !error && (
+        <p>Data are still loading, just a little patience</p>
+      )}
     </div>
   );
 }

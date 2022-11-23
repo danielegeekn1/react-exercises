@@ -16,6 +16,7 @@ export function useGitHubUser() {
       } else {
         setData(json);
         console.log(json);
+        isLoading(false);
       }
     } catch (error) {
       console.log(error.message);

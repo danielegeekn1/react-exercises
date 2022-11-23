@@ -1,8 +1,9 @@
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom/client";
+import React from "react";
 
 import { Root } from "./Root";
 //import "./Index.css";
 //Create a new `index.js` file within the `src` folder and render the `App` component using the `ReactDOM.render` method.
-const root = document.querySelector("#root");
+const root = ReactDOM.createRoot(document.querySelector("#root"));
 
-ReactDom.render(<Root />, root);
+root.render(<Root />);
