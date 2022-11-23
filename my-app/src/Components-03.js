@@ -57,10 +57,10 @@ export class App extends React.Component {
           <option value="it">ITALIAN</option>
         </select>
         <DisplayLanguage.Provider value={this.state.language}>
-          <ClickCounter initialValue={3} incrementsBy={1} />
+          <Counter initialValue={0} incrementor={1} timeout={1000} />
+
           <GitHubUser />
           <CounterButton initialValue={1} incrementsBy={1} />
-          <Counter initialValue={0} incrementor={1} timeout={1000} />
           <CounterDisplay initialValue={1} />
           <InteractiveWelcome />
           <Age name="daniele" />

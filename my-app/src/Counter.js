@@ -45,6 +45,7 @@ export function Counter({ initialValue, incrementor, timeout }) {
     }, timeout);
     return () => {
       clearInterval(_CounterCount);
+      console.log("i stopped rendering");
     };
   }, [initialValue, incrementor, timeout]);
 
