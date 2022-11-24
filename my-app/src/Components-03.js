@@ -1,13 +1,14 @@
 //Write a class component called `App` that renders the `Hello` component within a `div` tag.
 import React from "react";
-import { Hello } from "./Component-02";
-import { Welcome } from "./Props-01";
+
+import { Counter } from "./Counter";
+import { CounterDisplay } from "./CounterDisplay";
+
 export class App extends React.Component {
   render() {
     return (
       <div>
-        <Hello />
-        <Welcome name="Daniele" age={33} />
+        <Counter initialValue={0} incrementor={1} timeout={1000} />
       </div>
     );
   }
