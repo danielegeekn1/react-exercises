@@ -169,6 +169,7 @@ export function App() {
       </select>
       <DisplayLanguage.Provider value={language}>
         {/* <GitHubUser username="gianmarcotoso" /> */}
+        <GitHubUser />
         <ControlInputs />
         <Counter />
         <GitHubUserList />
