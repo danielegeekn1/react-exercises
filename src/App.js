@@ -35,15 +35,19 @@ const App = () => {
       );
     }
   };
+  const handleCartClearace = () => {
+    setCartItems([]);
+  };
   return (
     <div>
       <Router>
-        <Header />
+        <Header cartItems={cartItems} />
         <Routers
           productItems={productItems}
           cartItems={cartItems}
           handleAddProduct={handleAddProduct}
           handleRemoveProduct={handleRemoveProduct}
+          handleCartClearance={handleCartClearace}
         />
       </Router>
     </div>
