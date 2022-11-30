@@ -1,10 +1,10 @@
 import React from "react";
 import "./product.css";
-const Product = ({ productItems }) => {
+const Product = ({ productItems, handleAddProduct }) => {
   return (
     <div className="products">
       {productItems.map((productItem) => (
-        <div className="card">
+        <div className="card" key={productItem.id}>
           <div>
             <img
               className="product-image"
@@ -17,7 +17,12 @@ const Product = ({ productItems }) => {
           </div>
           <div className="product-price">${productItem.price}</div>
           <div>
-            <button className="product-add-button">Add to Cart</button>
+            <button
+              className="product-add-button"
+              onClick={() => handleAddProduct(productItem)}
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       ))}
