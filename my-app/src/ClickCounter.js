@@ -47,11 +47,7 @@ export function ClickCounter({ initialValue, incrementsBy }) {
   const [count, setCount] = useState(initialValue);
   function handleCounter(e) {
     console.log(e);
-    setCount((state) => {
-      return {
-        count: state.count + incrementsBy,
-      };
-    });
+    setCount((c) => c + incrementsBy);
   }
   return (
     <div>
