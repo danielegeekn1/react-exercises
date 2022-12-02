@@ -6,7 +6,7 @@ import { Color } from "./Color";
 import { Hello } from "./Component-02";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./LanguageContext";
-import { Welcome } from "./Props-01";
+
 import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
 const items = [
@@ -49,7 +49,6 @@ export class App extends React.Component {
         <DisplayLanguage.Provider>
           <Sum number1={1} number2={3} />
           <Hello />
-          <Welcome name="Daniele" age={33} />
           <Color items={items} />
           <ClickTracker />
           <TodoList items={ItemsF} />

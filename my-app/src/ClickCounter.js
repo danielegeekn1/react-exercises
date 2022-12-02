@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import { useState } from "react";
 import { CounterButton } from "./CounterButton";
 import { DisplayLanguage } from "./LanguageContext";
 const Strings = {
@@ -52,13 +53,6 @@ export function ClickCounter({ initialValue, incrementsBy }) {
       };
     });
   }
-
-  useEffect(
-    (e) => {
-      setCount(e.current.value);
-    },
-    [count]
-  );
   return (
     <div>
       <DisplayLanguage.Consumer>
@@ -68,7 +62,6 @@ export function ClickCounter({ initialValue, incrementsBy }) {
               {Strings[language].current_time}
               <h1>{count}</h1>
               <button onClick={handleCounter}></button>
-              <button></button>
             </div>
           );
         }}
